@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app='myApp'>
+  <head>
+  </head>
+  <body>
+    <div ng-view>
+      <div>
+        <a href='history.html'>Past Workouts</a>
+        <a href='today.html'>Todays Workout</a>
+      </div>
+      <div ng-controller='myAppController'>
+        <h1>{{user.name}}</h1>
+        <form ng-submit='logTraining()' ng-submit='trackHistory()'>
+          <input type='text' ng-model='workout.exercise'>
+          <input type='text' ng-model='workout.sets'>
+          <input type='text' ng-model='workout.reps'>
+          <input type='submit'>
+        </form>
+
+        <table>
+          <tr><td>exercise: {{ workout.exercise }}</td></tr>
+          <tr><td>sets: {{ workout.sets }}</td></tr>
+          <tr><td>reps: {{ workout.reps }}</td></tr>
+        </table>
+
+        <div ng-repeat='workout in user.workouts track by $index'>
+          Today's Workout: {{ workout.exercise}}, {{ workout.reps }}
+        </div>
+      </div>
+    </div>
+
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <!-- <script src="bower_components/angular/angular.js"></script> -->
+    <script src="app.js"></script>
+    <script src="appFactories.js"></script>
+  </body>
+</html>
