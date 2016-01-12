@@ -1,9 +1,8 @@
 var app = angular.module('myAppFactories', []);
 
 
-app.factory('historFactory', [], function(){
-
-  var trackHistory = function(){
-    console.log(this);
-  }
-})
+  app.factory('historFactory', [], function(){
+    chartHistory = function(){
+      //some how creates a chart for the history
+    }
+  })

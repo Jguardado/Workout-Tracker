@@ -1,6 +1,8 @@
-var app = angular.module('myApp', []);
+angular.module('myApp', [])
 
-app.controller('myAppController', ['$scope', function($scope){
+.controller('appController', ['$scope', function($scope){
+
+  console.log('here');
 
   $scope.user = {
     name: 'Juan',
@@ -19,7 +21,10 @@ app.controller('myAppController', ['$scope', function($scope){
     $scope.user.workouts.push(this.workout);
     console.log($scope.user);
   }
-
+  $state.go('today');;
+  // $scope.redirectToAbout = function(){
+  //   $state.go('today');
+  // }
 
 
 }]);
