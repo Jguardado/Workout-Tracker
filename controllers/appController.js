@@ -1,8 +1,7 @@
 angular.module('workoutTrack.controller', [])
 
-.controller('appController', ['$scope', '$stateProvider', function($scope, $stateProvider) {
+.controller('appController', ['$scope', function($scope) {
 
-  console.log('here');
 
   $scope.user = {
     name: 'Juan',
@@ -21,9 +20,9 @@ angular.module('workoutTrack.controller', [])
     console.log($scope.user);
   };
 
-  $state.go('today');
-
   // $scope.redirectToAbout = function(){
   //   $state.go('today');
   // }
 }]);
+
+console.log('inside appController');

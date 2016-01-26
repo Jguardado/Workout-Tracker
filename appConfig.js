@@ -5,7 +5,7 @@ angular.module('workoutTrack', ['ui.router', 'workoutTrack.history', 'workoutTra
   console.log('am I in here?');
   $stateProvider
     .state('today', {
-      url: '/',
+      url: '/today',
       templateUrl: 'views/today.html',
       controller: 'appController',
     })
@@ -15,4 +15,5 @@ angular.module('workoutTrack', ['ui.router', 'workoutTrack.history', 'workoutTra
       controller: 'workoutTrack.history',
     });
   $urlRouterProvider.otherwise('/');
+  console.log('bottom of the states');
 });

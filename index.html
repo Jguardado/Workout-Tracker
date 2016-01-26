@@ -3,15 +3,15 @@
   <head>
     <link rel='stylesheet' type='text/css' href='stylesheet.css'>
   </head>
-  <body  ng-app='workoutTrack'>
+  <body ng-app='workoutTrack'>
     <h1 class='title'>Tracker</h1>
     <a ui-sref='history'>Past Workouts</a> | <a ui-sref='today'>Todays Workout</a>
 
     <div ui-view></div>
     <!-- <div ng-includes='today.html'></div> -->
 
-    <script src="node_modules/angular/angular.js"></script>
-    <script src="node_modules/ui-router/release/angular-ui-router.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <!-- <script src="bower_components/angular/angular.js"></script> -->
     <script src="controllers/appController.js"></script>
     <script src="appConfig.js"></script>
