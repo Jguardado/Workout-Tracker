@@ -1,0 +1,30 @@
+{
+  "name": "workouttrack",
+  "version": "0.0.1",
+  "description": "",
+  "main": "appConfig.js",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-route": "^1.4.8",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
+    "mongoose": "^4.3.7",
+    "morgan": "^1.6.1",
+    "nodemon": "^1.8.1",
+    "ui-router": "^0.2.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jguardado/Workout-Tracker.git"
+  },
+  "author": "Juan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jguardado/Workout-Tracker/issues"
+  },
+  "homepage": "https://github.com/Jguardado/Workout-Tracker#readme"
+}

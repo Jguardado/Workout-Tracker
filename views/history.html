@@ -1,0 +1,8 @@
+<h1 class='title'>Workout history</h1>
+  <label>Search: <input ng-model="searchText"></label>
+  <table class='searchResults'>
+    <div ng-repeat='workout in user.workouts | filter:serchText' class='log'>
+      <!-- add in the functionality of the date below -->
+      <li>on 12/12/12: {{ workout.exercise}}, {{ workout.reps }}, {{ workout.sets}}</li>
+    </div>
+  </table>
