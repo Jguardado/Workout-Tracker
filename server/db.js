@@ -29,3 +29,7 @@ User = mongoose.model('User', UserSchema);
 Workout = mongoose.model('Workout', WorkoutSchema);
 
 //need to save users and workouts to database. Will figure out later
+exports.createWorkout = function(obj) {
+  console.log(obj);
+  
+}

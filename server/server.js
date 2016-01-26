@@ -4,10 +4,10 @@ var port = process.env.PORT || 3000;
 var db = require('./db.js');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var path = require('path');
 
 app.use(morgan('combined'));
 app.use(express.static(__dirname + '/../client'));
-
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {

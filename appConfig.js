@@ -6,12 +6,12 @@ angular.module('workoutTrack', ['ui.router', 'workoutTrack.history', 'workoutTra
   $stateProvider
     .state('today', {
       url: '/',
-      templateUrl: 'today.html',
+      templateUrl: 'views/today.html',
       controller: 'appController',
     })
     .state('history', {
       url: '/history',
-      templateUrl: 'history.html',
+      templateUrl: 'views/history.html',
       controller: 'workoutTrack.history',
     });
   $urlRouterProvider.otherwise('/');
