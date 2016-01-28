@@ -20,6 +20,13 @@ app.get('/today', function(req, res, next) {
   db.getWorkouts().then(function(data) {
     res.status(200).send(data);
   });
+
+  next();
+})
+.get('/today', function(req, res, next) {
+  db.getUsers().then(function(data) {
+    res.status(200).send(data);
+  });
 });
 
 app.post('/today', function(req, res, next) {

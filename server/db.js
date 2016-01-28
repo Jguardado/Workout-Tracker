@@ -68,7 +68,7 @@ exports.createWorkout = function(obj) {
 };
 
 exports.getWorkouts = function() {
-  return Workouts.find({}, function(err, data) {
+  return Workout.find({}, function(err, data) {
     if (err) {
       console.error('not retrieving workouts');
     } else {
@@ -93,8 +93,8 @@ exports.createUser = function(obj) {
 
 };
 
-exports.getUser = function() {
-  return Users.find({}, function(err, data) {
+exports.getUsers = function() {
+  return User.find({}, function(err, data) {
     if (err) {
       console.error('trouble getting users');
     } else {
