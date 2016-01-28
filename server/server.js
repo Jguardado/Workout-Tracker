@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
 
 app.get('/today', function(req, res, next) {
   console.log('sending get request');
-  db.
+  // db.
 })
 //
 // app.post('/user', function(req, res, next) {
