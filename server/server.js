@@ -17,8 +17,24 @@ app.use(function(req, res, next) {
 
 app.get('/today', function(req, res, next) {
   console.log('sending get request');
-  // db.
-})
+  db.getWorkouts().then(function(data) {
+    res.status(200).send(data);
+  });
+});
+
+app.post('/today', function(req, res, next) {
+  console.log('request body', req.body);
+  db.createWorkout(req.body).then(function(post, err) {
+    if (err) {
+      console.log('create workout err:', err);
+      res.status(406);
+    } else {
+      console.log('createPost 200 ok:');
+      res.status(200).send(post);
+    }
+  });
+});
+
 //
 // app.post('/user', function(req, res, next) {
 //   console.log('/CREATEUSER:POST REQ.BODY', req.body)
@@ -34,17 +50,6 @@ app.get('/today', function(req, res, next) {
 //   });
 // });
 //
-// app.post('/createPost', function(req, res, next) {
-//   console.log('request body', req.body);
-//   db.createPost(req.body).then(function(post, err) {
-//     if (err) {
-//       console.log('create post err:', err);
-//       res.status(406);
-//     } else {
-//       console.log('createPost 200 ok:')
-//       res.status(200).send(post);
-//     }
-//   });
-// });
+
 //A lot more get and post functions to come.
 app.listen(port);

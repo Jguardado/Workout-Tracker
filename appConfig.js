@@ -5,7 +5,7 @@ angular.module('workoutTrack', ['ui.router', 'workoutTrack.history', 'workoutTra
   console.log('am I in here?');
   $stateProvider
     .state('today', {
-      url: '/today',
+      url: '/',
       templateUrl: 'views/today.html',
       controller: 'appController',
     })

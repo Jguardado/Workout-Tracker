@@ -31,13 +31,23 @@ User = mongoose.model('User', UserSchema);
 Workout = mongoose.model('Workout', WorkoutSchema);
 
 var workout = new Workout ({ reps: 8, sets: 4, exercise: 'bench press' });
+var user = new User ({ username: 'Juan', weight: 215, height: 6 });
 
 workout.save(function(err, workout) {
   if (err) console.error('problems saving');
   return workout;
 }).then(function(workout) {
   workout.find().then(function(workout) {
-    console.log('this is thw workout', workout);
+    console.log('this is the workout', workout);
+  });
+});
+
+user.save(function(err, user) {
+  if (err) console.error('problems saving single user');
+  return user;
+}).then(function(user) {
+  user.find().then(function(user) {
+    console.log('this is the user', user);
   });
 });
 
@@ -47,10 +57,48 @@ exports.createWorkout = function(obj) {
     reps: obj.reps,
     sets: obj.sets,
     exercise: obj.exercise,
-  })
+  });
+
   newWorkout.save(function(err, newWorkout) {
     if (err) return console.error('new workout is not saved');
     return newWorkout;
-  })
+  });
+
   return newWorkout;
+};
+
+exports.getWorkouts = function() {
+  return Workouts.find({}, function(err, data) {
+    if (err) {
+      console.error('not retrieving workouts');
+    } else {
+      return data;
+    }
+  });
+};
+
+exports.createUser = function(obj) {
+  var newUser = new User({
+    username: obj.username,
+    weight: obj.weight,
+    height: obj.height,
+  });
+
+  newUser.save(function(err, newUser) {
+    if (err) return console.error('trouble saving user');
+    return newUser;
+  });
+
+  return newUser;
+
+};
+
+exports.getUser = function() {
+  return Users.find({}, function(err, data) {
+    if (err) {
+      console.error('trouble getting users');
+    } else {
+      return data;
+    }
+  });
 };
