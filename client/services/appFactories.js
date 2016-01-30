@@ -1,4 +1,4 @@
-angular.module('workoutTrack.factories', [])
+angular.module('workoutTrack.services', [])
 
 .factory('appFactory', ['$http', function($http) {
 
@@ -12,7 +12,7 @@ angular.module('workoutTrack.factories', [])
     },
   };
 
-},]);
+}, ]);
 
 // chartHistory = function(){
 //   //some how creates a chart for the history

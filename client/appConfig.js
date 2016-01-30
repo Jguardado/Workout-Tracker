@@ -1,19 +1,20 @@
-angular.module('workoutTrack', ['ui.router', 'workoutTrack.history', 'workoutTrack.factories', 'workoutTrack.controller'])
+angular.module('workoutTrack', ['ui.router', 'workoutTrack.history', 'workoutTrack.services', 'workoutTrack.controller'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
   console.log('am I in here?');
   $stateProvider
     .state('today', {
-      url: '/',
+      url: '/today',
       templateUrl: 'views/today.html',
       controller: 'appController',
     })
     .state('history', {
       url: '/history',
       templateUrl: 'views/history.html',
-      controller: 'workoutTrack.history',
+      controller: 'historyController',
     });
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/today');
+
   console.log('bottom of the states');
 });

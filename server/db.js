@@ -30,11 +30,12 @@ var UserSchema = mongoose.Schema({
 User = mongoose.model('User', UserSchema);
 Workout = mongoose.model('Workout', WorkoutSchema);
 
-var workout = new Workout ({ reps: 8, sets: 4, exercise: 'bench press' });
-var user = new User ({ username: 'Juan', weight: 215, height: 6 });
+//-------------------practice saving to database--------------
+var workout = new Workout({ reps: 8, sets: 4, exercise: 'bench press' });
+var user = new User({ username: 'Juan', weight: 215, height: 6 });
 
 workout.save(function(err, workout) {
-  if (err) console.error('problems saving');
+  if (err) console.error('problems saving workout');
   return workout;
 }).then(function(workout) {
   workout.find().then(function(workout) {
@@ -42,14 +43,16 @@ workout.save(function(err, workout) {
   });
 });
 
-user.save(function(err, user) {
-  if (err) console.error('problems saving single user');
-  return user;
-}).then(function(user) {
-  user.find().then(function(user) {
-    console.log('this is the user', user);
-  });
-});
+//
+// user.save(function(err, user) {
+//   if (err) console.error('problems saving single user');
+//   return user;
+// }).then(function(user) {
+//   user.find().then(function(user) {
+//     console.log('this is the user', user);
+//   });
+// });
+//---------------------------------------------------------------
 
 //need to save users and workouts to database. Will figure out later
 exports.createWorkout = function(obj) {

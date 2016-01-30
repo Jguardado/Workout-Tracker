@@ -18,18 +18,26 @@ app.use(function(req, res, next) {
 app.get('/today', function(req, res, next) {
   console.log('sending get request');
   db.getWorkouts().then(function(data) {
+    console.log('this is the data obj: ', data);
+    res.status(200);
+
+    // console.log('this is the res obj: ', res);
+
+  });
+
+  next();
+}, function(req, res, next) {
+
+  console.log('making it into the next get request');
+  db.getUsers().then(function(data) {
+    console.log('This is the data obj in getUsers :', data);
     res.status(200).send(data);
   });
 
   next();
 })
-.get('/today', function(req, res, next) {
-  db.getUsers().then(function(data) {
-    res.status(200).send(data);
-  });
-});
 
-app.post('/today', function(req, res, next) {
+.post('/today', function(req, res, next) {
   console.log('request body', req.body);
   db.createWorkout(req.body).then(function(post, err) {
     if (err) {

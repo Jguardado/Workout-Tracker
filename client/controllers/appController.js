@@ -1,17 +1,17 @@
 angular.module('workoutTrack.controller', [])
 
-.controller('appController', ['$scope', function($scope) {
-
+.controller('appController', ['$scope', 'appFactory', function($scope, appFactory) {
 
   $scope.user = {
     name: 'Juan',
-    workouts: [],
+    height: '',
+    weight: '',
   };
 
   $scope.workout = {
-    exercise: 'bench press',
-    sets: '1',
     reps: '10',
+    sets: '1',
+    exercise: 'bench press',
   };
 
   $scope.logTraining = function() {
@@ -20,9 +20,12 @@ angular.module('workoutTrack.controller', [])
     console.log($scope.user);
   };
 
-  // $scope.redirectToAbout = function(){
-  //   $state.go('today');
-  // }
-}]);
+  $scope.pullingInfo = function() {
+    appFactory.gettingInfo()
+      .then(function(data) {
+        console.log(data);
+      });
+  };
+}, ]);
 
 console.log('inside appController');
