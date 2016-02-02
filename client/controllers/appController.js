@@ -3,21 +3,24 @@ angular.module('workoutTrack.controller', [])
 .controller('appController', ['$scope', 'appFactory', function($scope, appFactory) {
 
   $scope.user = {
-    name: 'Juan',
+    name: '',
     height: '',
     weight: '',
   };
 
   $scope.workout = {
-    reps: '10',
-    sets: '1',
-    exercise: 'bench press',
+    reps: '',
+    sets: '',
+    exercise: '',
   };
 
   $scope.logTraining = function() {
     //console.log(this.workout);
-    $scope.user.workouts.push(this.workout);
-    console.log($scope.user);
+    // var temp = scope.workout;
+    appFactory.saveWorkout($scope.workout);
+
+    // console.log('this is the passed in workout', workout);
+    console.log('this is the scope.workout', $scope.workout);
   };
 
   $scope.pullingInfo = function() {

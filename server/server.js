@@ -6,7 +6,7 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var path = require('path');
 
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 app.use(express.static(__dirname + '/../client'));
 app.use(bodyParser.json());
 
@@ -15,39 +15,25 @@ app.use(function(req, res, next) {
   next();
 });
 
+//right now it is only set up to retrieve information fro workouts. Need to build functions for user info.
 app.get('/today', function(req, res, next) {
   console.log('sending get request');
-  db.getWorkouts().then(function(data) {
-    console.log('this is the data obj: ', data);
-    res.status(200);
-
+  db.getWorkouts()
     // console.log('this is the res obj: ', res);
 
-  });
 
   next();
 }, function(req, res, next) {
 
   console.log('making it into the next get request');
-  db.getUsers().then(function(data) {
-    console.log('This is the data obj in getUsers :', data);
-    res.status(200).send(data);
-  });
+  db.getUsers()
 
   next();
 })
 
 .post('/today', function(req, res, next) {
   console.log('request body', req.body);
-  db.createWorkout(req.body).then(function(post, err) {
-    if (err) {
-      console.log('create workout err:', err);
-      res.status(406);
-    } else {
-      console.log('createPost 200 ok:');
-      res.status(200).send(post);
-    }
-  });
+  db.createWorkout(req.body);
 });
 
 //

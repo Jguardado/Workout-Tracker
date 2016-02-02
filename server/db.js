@@ -34,14 +34,14 @@ Workout = mongoose.model('Workout', WorkoutSchema);
 var workout = new Workout({ reps: 8, sets: 4, exercise: 'bench press' });
 var user = new User({ username: 'Juan', weight: 215, height: 6 });
 
-workout.save(function(err, workout) {
-  if (err) console.error('problems saving workout');
-  return workout;
-}).then(function(workout) {
-  workout.find().then(function(workout) {
-    console.log('this is the workout', workout);
-  });
-});
+// workout.save(function(err, workout) {
+//   if (err) console.error('problems saving workout');
+//   return workout;
+// }).then(function(workout) {
+//   workout.find().then(function(workout) {
+//     console.log('this is the workout', workout);
+//   });
+// });
 
 //
 // user.save(function(err, user) {
