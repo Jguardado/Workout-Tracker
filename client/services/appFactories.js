@@ -5,7 +5,7 @@ angular.module('workoutTrack.services', [])
   return {
     // console.log('calling gettingInfo');
     gettingInfo: function() {
-      return $http.get('http://locaolhost:3000/today').then(function(res) {
+      return $http.get('/today').then(function(res) {
         console.log('this is the response data', res.data);
         return res.data;
       });
@@ -17,11 +17,11 @@ angular.module('workoutTrack.services', [])
       });
     },
 
-    getUser: function() {
-      return $http.get('http://localhost:3000/today').then(function(res) {
-        return res.data;
-      });
-    },
+    // getUser: function() {
+    //   return $http.get('http://localhost:3000/today').then(function(res) {
+    //     return res.data;
+    //   });
+    // },
 
     saveWorkout: function(workout) {
       return $http.post('http://localhost:3000/today', workout).then(function(res) {
@@ -30,18 +30,15 @@ angular.module('workoutTrack.services', [])
       });
     },
 
-    getWorkout: function() {
-      return $http.get('http://localhost:3000/today').then(function(res) {
-        return res.data;
-      });
-    },
+    // getWorkout: function() {
+    //   return $http.get('http://localhost:3000/data').then(function(res) {
+    //     return res.data;
+    //   });
+    // },
 
   };
 
 }, ]);
 
-// chartHistory = function(){
-//   //some how creates a chart for the history
-// }
 
 console.log('inside of factories');

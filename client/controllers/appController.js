@@ -3,7 +3,7 @@ angular.module('workoutTrack.controller', [])
 .controller('appController', ['$scope', 'appFactory', function($scope, appFactory) {
 
   $scope.user = {
-    name: '',
+    name: 'Juan Guardado',
     height: '',
     weight: '',
   };
@@ -24,11 +24,15 @@ angular.module('workoutTrack.controller', [])
   };
 
   $scope.pullingInfo = function() {
-    appFactory.gettingInfo()
-      .then(function(data) {
-        console.log(data);
-      });
+    appFactory.gettingInfo();
+    console.log('this is result of the function', appFactory.gettingInfo());
+
+    // .then(function(data) {
+    //   console.log(data);
+    // });
   };
-}, ]);
+
+  $scope.pullingInfo();
+},]);
 
 console.log('inside appController');

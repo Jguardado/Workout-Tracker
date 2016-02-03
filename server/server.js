@@ -18,17 +18,19 @@ app.use(function(req, res, next) {
 //right now it is only set up to retrieve information fro workouts. Need to build functions for user info.
 app.get('/today', function(req, res, next) {
   console.log('sending get request');
-  db.getWorkouts()
-    // console.log('this is the res obj: ', res);
+  db.getWorkouts();
 
+  // console.log('this is the res obj: ', res);
 
-  next();
-}, function(req, res, next) {
+  // next();
+})
+
+.get('/today', function(req, res, next) {
 
   console.log('making it into the next get request');
-  db.getUsers()
+  db.getUsers();
 
-  next();
+  // next();
 })
 
 .post('/today', function(req, res, next) {

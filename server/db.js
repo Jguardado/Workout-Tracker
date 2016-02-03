@@ -31,8 +31,8 @@ User = mongoose.model('User', UserSchema);
 Workout = mongoose.model('Workout', WorkoutSchema);
 
 //-------------------practice saving to database--------------
-var workout = new Workout({ reps: 8, sets: 4, exercise: 'bench press' });
-var user = new User({ username: 'Juan', weight: 215, height: 6 });
+// var workout = new Workout({ reps: 8, sets: 4, exercise: 'bench press' });
+// var user = new User({ username: 'Juan', weight: 215, height: 6 });
 
 // workout.save(function(err, workout) {
 //   if (err) console.error('problems saving workout');
@@ -75,6 +75,7 @@ exports.getWorkouts = function() {
     if (err) {
       console.error('not retrieving workouts');
     } else {
+      console.log('success', data);
       return data;
     }
   });
