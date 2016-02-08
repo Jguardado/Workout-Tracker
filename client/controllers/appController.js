@@ -24,15 +24,11 @@ angular.module('workoutTrack.controller', [])
   };
 
   $scope.pullingInfo = function() {
-    appFactory.gettingInfo();
-    console.log('this is result of the function', appFactory.gettingInfo());
-
-    // .then(function(data) {
-    //   console.log(data);
-    // });
+    var thing  = appFactory.gettingInfo();
+    console.log('this is result of the function', thing);
   };
 
   $scope.pullingInfo();
-},]);
+}, ]);
 
 console.log('inside appController');

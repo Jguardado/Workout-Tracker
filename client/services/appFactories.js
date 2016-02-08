@@ -5,8 +5,10 @@ angular.module('workoutTrack.services', [])
   return {
     // console.log('calling gettingInfo');
     gettingInfo: function() {
+      console.log('getting info is being called');
       return $http.get('/today').then(function(res) {
         console.log('this is the response data', res.data);
+
         return res.data;
       });
     },
@@ -39,6 +41,5 @@ angular.module('workoutTrack.services', [])
   };
 
 }, ]);
-
 
 console.log('inside of factories');

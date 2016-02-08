@@ -71,14 +71,7 @@ exports.createWorkout = function(obj) {
 };
 
 exports.getWorkouts = function() {
-  return Workout.find({}, function(err, data) {
-    if (err) {
-      console.error('not retrieving workouts');
-    } else {
-      console.log('success', data);
-      return data;
-    }
-  });
+  return Workout.find({});
 };
 
 exports.createUser = function(obj) {
