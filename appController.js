@@ -1,8 +1,7 @@
-angular.module('myApp', [])
+angular.module('control', ['ui.router', 'myApp'])
 
 .controller('appController', ['$scope', function($scope){
 
-  console.log('here');
 
   $scope.user = {
     name: 'Juan',
@@ -15,13 +14,14 @@ angular.module('myApp', [])
     reps: '10'
   }
 
+  console.log($scope.user.name);
 
   $scope.logTraining = function(){
     //console.log(this.workout);
     $scope.user.workouts.push(this.workout);
     console.log($scope.user);
   }
-  $state.go('today');;
+  //$state.go('today');;
   // $scope.redirectToAbout = function(){
   //   $state.go('today');
   // }

@@ -3,6 +3,9 @@
   <table class='searchResults'>
     <div ng-repeat='workout in user.workouts | filter:serchText' class='log'>
       <!-- add in the functionality of the date below -->
+      <div ng-repeat='workout in user.workouts' class='log'>
+        Previous Workout: {{ workout.exercise }}, {{ workout.reps }}
+      </div>
       <li>on 12/12/12: {{ workout.exercise}}, {{ workout.reps }}, {{ workout.sets}}</li>
     </div>
   </table>
