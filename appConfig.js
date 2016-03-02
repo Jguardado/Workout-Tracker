@@ -1,18 +1,18 @@
 angular.module('myApp', ['ui.router', 'control'])
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $urlRouterProvider) {
 
   console.log('am I in here?');
   $stateProvider
     .state('today', {
       url: '/',
       templateUrl: 'today.html',
-      controller: 'appController'
+      controller: 'appController',
     })
     .state('history', {
       url: '/history',
       templateUrl: 'history.html',
-      controller: 'appController'
-    })
-  $urlRouterProvider.otherwise('/')
+      controller: 'appController',
+    });
+  $urlRouterProvider.otherwise('/');
 });

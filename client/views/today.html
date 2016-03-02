@@ -1,0 +1,23 @@
+
+    <div>
+      <h1 class='username'>{{ user.name }}</h1>
+      <form ng-submit='logTraining()'>
+        Exercise
+        <input type='text' ng-model='workout.exercise'>
+        Sets
+        <input type='text' ng-model='workout.sets'>
+        Reps
+        <input type='text' ng-model='workout.reps'>
+        <input type='submit'>
+      </form>
+
+      <table class='table'>
+        <tr><td>exercise: {{ workout.exercise }}</td></tr>
+        <tr><td>sets: {{ workout.sets }}</td></tr>
+        <tr><td>reps: {{ workout.reps }}</td></tr>
+      </table>
+
+      <div ng-repeat='workout in user.workouts' class='log'>
+        Previous Workout: {{ workout.exercise}}, {{ workout.reps }}
+      </div>
+    </div>

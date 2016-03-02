@@ -1,0 +1,49 @@
+body {
+  background-image: -webkit-linear-gradient(left, #ffffff 0%, #F6F6F6 47%, #ededed 100%);
+  /*background-color: antiquewhite;*/
+  font-family: 'Knewave', cursive;
+}
+.header {
+
+}
+
+.username {
+  color: white;
+  text-shadow: -5px 0px 3px rgba(111, 137, 255, 1);
+  border-radius: 155px 1px 156px 1px;
+  -moz-border-radius: 155px 1px 156px 1px;
+  -webkit-border-radius: 155px 1px 156px 1px;
+  border: 0px solid #000000;
+  background-color: #02185c;
+  height: 50px;
+  width: 400px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.statsTable {
+  text-align: center;
+  -webkit-box-shadow: 18px 14px 5px 0px rgba(152,172,224,1);
+  -moz-box-shadow: 18px 14px 5px 0px rgba(152,172,224,1);
+  box-shadow: 18px 14px 5px 0px rgba(152,172,224,1);
+  background: azure;
+  float: right;
+  width: 300px;
+  border-radius: 7px;
+  margin-right: 100px;
+  font-size: 20px;
+}
+
+.log {
+  border: solid 2px,
+  width: 500px;
+}
+
+.title {
+  color: darkblue;
+}
+
+.apology {
+  text-align: center;
+}
